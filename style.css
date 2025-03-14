@@ -1,0 +1,125 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    color: white;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(45deg, #ff0000, #ff9900, #33cc33, #3399ff, #9900cc);
+    background-size: 400% 400%;
+    animation: gradientBG 8s ease infinite;
+    overflow: hidden;
+    padding: 20px;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.container {
+    width: 90%;
+    max-width: 600px;
+    text-align: center;
+}
+
+.holi-heading {
+    font-size: 3em;
+    font-weight: bold;
+    cursor: pointer;
+    animation: fadeIn 2s ease-in-out, colorChange 3s infinite alternate;
+    transition: transform 0.3s ease;
+}
+
+.holi-heading:hover {
+    transform: scale(1.1);
+}
+
+.btn {
+    margin-top: 20px;
+    padding: 12px 24px;
+    font-size: 18px;
+    border: none;
+    border-radius: 10px;
+    background-color: #ff5722;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background-color: #e64a19;
+}
+
+.message {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    border-radius: 15px;
+    display: none;
+    color: white;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin-top: 20px;
+    width: 100%;
+    max-width: 500px;
+    word-wrap: break-word;
+    animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.color-splash {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    animation: splash 2s linear infinite;
+}
+
+@keyframes splash {
+    0% { transform: scale(1); opacity: 1; }
+    100% { transform: scale(10); opacity: 0; }
+}
+
+@media (max-width: 768px) {
+    .holi-heading {
+        font-size: 2.5em;
+    }
+
+    .message {
+        font-size: 1em;
+    }
+
+    .btn {
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .holi-heading {
+        font-size: 2em;
+    }
+
+    .message {
+        font-size: 0.9em;
+    }
+
+    .btn {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+}
